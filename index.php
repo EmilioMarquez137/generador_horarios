@@ -4,55 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Horarios Escolares</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-        .container {
-            width: 80%;
-            margin: 2em auto;
-            background: white;
-            padding: 2em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-top: 1em;
-        }
-        input, select {
-            padding: 0.5em;
-            margin-top: 0.5em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            margin-top: 1em;
-            padding: 0.5em 1em;
-            color: white;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
@@ -76,8 +28,28 @@
             <input type="text" id="nombre-clase" name="nombre-clase" required>
             <label for="grupo-clase">Grupo:</label>
             <input type="text" id="grupo-clase" name="grupo-clase" required>
-            <label for="horario-clase">Horario:</label>
-            <input type="text" id="horario-clase" name="horario-clase" required>
+            <div class="day-time-group">
+                <div>
+                    <label for="dia-clase">Día:</label>
+                    <select id="dia-clase" name="dia-clase" required>
+                        <option value="lunes">Lunes</option>
+                        <option value="martes">Martes</option>
+                        <option value="miércoles">Miércoles</option>
+                        <option value="jueves">Jueves</option>
+                        <option value="viernes">Viernes</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="hora-inicio-clase">Hora de Inicio:</label>
+                    <input type="time" id="hora-inicio-clase" name="hora-inicio-clase" required>
+                </div>
+                <div>
+                    <label for="hora-fin-clase">Hora de Fin:</label>
+                    <input type="time" id="hora-fin-clase" name="hora-fin-clase" required>
+                </div>
+            </div>
+            <button type="button" onclick="agregarDiaHora()">Añadir Día y Hora</button>
+            <div id="dias-horas-clase"></div>
             <button type="submit">Añadir Clase</button>
         </form>
     </section>
@@ -92,5 +64,6 @@
         </form>
     </section>
 </div>
+<script src="js/functions.js"></script>
 </body>
 </html>
