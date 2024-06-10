@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: ;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: #75BDE0;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #333;
+}
