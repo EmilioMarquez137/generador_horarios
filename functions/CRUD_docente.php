@@ -9,8 +9,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 if ($conn->connect_error) {
+    echo "<script>console.log('Conexión fallida: " . $conn->connect_error . "');</script>";
     die("Conexión fallida: " . $conn->connect_error);
+} else {
+    echo "<script>console.log('Conexión exitosa a la base de datos.');</script>";
 }
+
 
 // Función para escapar valores y evitar inyección SQL
 function escape($conn, $value) {
